@@ -1,9 +1,9 @@
-package com.kyle.springpractice;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.retry.annotation.EnableRetry;
-
-@Configuration
-@EnableRetry
-public class RetryConfig {
-}
+//package com.kyle.springpractice;
+//
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.retry.annotation.EnableRetry;
+//
+//@Configuration
+//@EnableRetry
+//public class RetryConfig {
+//}

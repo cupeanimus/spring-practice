@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring?useSSL=false&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul
+    username: kyle
+    password: kyle1234
+    testWhileIdle: true
+    type: com.zaxxer.hikari.HikariDataSource
+    validationQuery: SELECT 1
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    open-in-view: false
+
+

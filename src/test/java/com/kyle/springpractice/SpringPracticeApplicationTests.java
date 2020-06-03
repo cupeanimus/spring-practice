@@ -13,11 +13,15 @@ import java.util.List;
 @SpringBootTest
 class SpringPracticeApplicationTests {
 
-    @Autowired
     private MemberRepository memberRepository;
 
     @Autowired
     private MemberRepsoitorySupport memberRepsoitorySupport;
+
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
 
 
     @Test
@@ -34,7 +38,7 @@ class SpringPracticeApplicationTests {
 
         memberRepository.save(member);
 
-        List<Member> memberList = memberRepsoitorySupport.findMember();
+        List<Member> memberList = memberRepository.findMemberCustom();
 
         assertTrue(memberList.size()==1);
         assertTrue(memberList.get(0).getLastname().equals(lastname));

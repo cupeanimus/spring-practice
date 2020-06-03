@@ -13,7 +13,7 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom {
 
 
     @Override
-    public List<Member> findMember(){
+    public List<Member> findMemberCustom(){
         QMember member = QMember.member;
         return queryFactory.selectFrom(member)
                 .where()

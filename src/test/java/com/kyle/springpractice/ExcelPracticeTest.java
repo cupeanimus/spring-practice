@@ -41,9 +41,9 @@ public class ExcelPracticeTest {
         Cell cell = row.createCell(startCell++);
         cell.setCellValue("데이터입력 시");
         for (int i = startRow; i < startRow+10; i++) {
-            row= sheet.createRow(startRow++);
+            row= sheet.createRow(i);
             for (int j = startCell; j < startCell+5; j++) {
-                cell = row.createCell(startCell++);
+                cell = row.createCell(j);
                 cell.setCellValue(i +"  "+j);
             }
 

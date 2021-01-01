@@ -1,8 +1,8 @@
 //package com.kyle.springpractice;
 //
-//import com.kyle.springpractice.domain.entity.Member;
-//import com.kyle.springpractice.persistence.MemberRepository;
-//import com.kyle.springpractice.persistence.MemberRepsoitorySupport;
+//import com.kyle.springpractice.poi.entity.Member;
+//import com.kyle.springpractice.poi.persistence.MemberRepository;
+//import com.kyle.springpractice.poi.persistence.MemberRepsoitorySupport;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;

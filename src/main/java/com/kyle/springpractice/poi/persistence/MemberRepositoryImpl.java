@@ -1,7 +1,7 @@
-//package com.kyle.springpractice.persistence;
+//package com.kyle.springpractice.poi.persistence;
 //
-//import com.kyle.springpractice.domain.entity.Member;
-//import com.kyle.springpractice.domain.entity.QMember;
+//import com.kyle.springpractice.poi.entity.Member;
+//import com.kyle.springpractice.poi.entity.QMember;
 //import com.querydsl.jpa.impl.JPAQueryFactory;
 //import lombok.RequiredArgsConstructor;
 //

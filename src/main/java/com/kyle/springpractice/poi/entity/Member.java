@@ -1,12 +1,10 @@
-package com.kyle.springpractice.domain.entity;
+package com.kyle.springpractice.poi.entity;
 
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Table(name = "member")

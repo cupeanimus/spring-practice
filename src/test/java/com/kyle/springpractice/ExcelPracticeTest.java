@@ -39,7 +39,7 @@ public class ExcelPracticeTest {
         Row row = sheet.createRow(startRow++);
 
         Cell cell = row.createCell(startCell++);
-        cell.setCellValue("데이터입력 시");
+        cell.setCellValue("데이터입력 시작");
         for (int i = startRow; i < startRow+10; i++) {
             row= sheet.createRow(i);
             for (int j = startCell; j < startCell+5; j++) {

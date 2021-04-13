@@ -24,4 +24,6 @@ spring:
     database: mysql
     open-in-view: false
 
-
+logging:
+  level:
+    tracer: trace

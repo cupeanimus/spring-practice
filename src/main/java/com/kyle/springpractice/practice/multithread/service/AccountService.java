@@ -13,8 +13,10 @@ public class AccountService {
 
     @Transactional
     public long deposit(long accountId, long amount){
-        Account account = accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("존재하지 않는 accountId 입니다"));
+        Account account = accountRepository.findByAccountId(accountId);
+        System.out.println("thread = " + Thread.currentThread().getName() + ", " + "currBalance = " + account.getBalance());
         account.deposit(amount);
+        System.out.println("thread = " + Thread.currentThread().getName() + ", " + "currBalance = " + account.getBalance());
         return account.getBalance();
     }
 

@@ -29,30 +29,33 @@ class AccountServiceTest {
     @Autowired
     private AccountRepository accountRepository;
 
-    private long accountId;
+//    private long accountId;
 
-    @BeforeEach
-    public void setUp() {
-        Account account = new Account("테스트계좌");
-        account = accountRepository.save(account);
-        accountId = account.getId();
+//    @BeforeEach
+//    public void setUp() {
+//        Account account = new Account("테스트계좌");
+//        account = accountRepository.save(account);
+//        accountId = account.getId();
 
-    }
+//    }
 
     @Test
     public void SimultaneousDepositPassWithNoRaceCondition() throws InterruptedException {
+        Account account = new Account("테스트계좌");
+        account = accountRepository.save(account);
+        long accountId = account.getAccountId();
+
         CountDownLatch latch = new CountDownLatch(100);
-        for (int i=0; i < 100; i++) {
+        for (int i = 0; i < 100; i++) {
             service.execute(() -> {
                 accountService.deposit(accountId, 10);
                 latch.countDown();
             });
         }
         latch.await();
-        Account richAccount = accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("잘못된 accountId 입니다"));
+        Account richAccount = accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("잘못된 accountId 입니다."));
         assertThat(richAccount.getBalance()).isEqualTo(10 * 100);
     }
-
 
 
 }

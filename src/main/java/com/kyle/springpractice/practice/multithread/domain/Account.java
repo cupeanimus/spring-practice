@@ -2,23 +2,25 @@ package com.kyle.springpractice.practice.multithread.domain;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Getter
 @Entity(name = "account")
 public class Account implements Serializable {
 
+    private static final long serialVersionUID = -7524628172959175522L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long accountId;
 
     private String name;
 
     private long balance;
+
+    @Version
+    private int version;
 
     public Account() {}
 

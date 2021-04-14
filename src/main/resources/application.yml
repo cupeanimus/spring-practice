@@ -26,4 +26,4 @@ spring:
 
 logging:
   level:
-    tracer: trace
+    org.hibernate.type: trace

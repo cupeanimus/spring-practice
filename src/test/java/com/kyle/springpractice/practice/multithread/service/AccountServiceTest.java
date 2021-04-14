@@ -1,9 +1,6 @@
 package com.kyle.springpractice.practice.multithread.service;
 
-import com.kyle.springpractice.practice.multithread.domain.Account;
-import com.kyle.springpractice.practice.multithread.domain.AccountRepository;
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
+import com.kyle.springpractice.practice.multithread.domain.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -29,21 +26,23 @@ class AccountServiceTest {
     @Autowired
     private AccountRepository accountRepository;
 
-//    private long accountId;
 
-//    @BeforeEach
-//    public void setUp() {
-//        Account account = new Account("테스트계좌");
-//        account = accountRepository.save(account);
-//        accountId = account.getId();
 
-//    }
+
+    private long accountId;
+
+
+    @BeforeEach
+    public void setUp() {
+        accountRepository.deleteAll();
+        Account account = new Account("테스트계좌");
+        account = accountRepository.save(account);
+        accountId = account.getAccountId();
+
+    }
 
     @Test
     public void SimultaneousDepositPassWithNoRaceCondition() throws InterruptedException {
-        Account account = new Account("테스트계좌");
-        account = accountRepository.save(account);
-        long accountId = account.getAccountId();
 
         CountDownLatch latch = new CountDownLatch(100);
         for (int i = 0; i < 100; i++) {
@@ -55,6 +54,7 @@ class AccountServiceTest {
         latch.await();
         Account richAccount = accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("잘못된 accountId 입니다."));
         assertThat(richAccount.getBalance()).isEqualTo(10 * 100);
+
     }
 
 

@@ -1,4 +1,4 @@
-package com.kyle.springpractice.practice.multithread.domain;
+package com.kyle.springpractice.practice.thread.account.domain;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package com.kyle.springpractice.practice.multithread.config;
+package com.kyle.springpractice.practice.thread.account.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

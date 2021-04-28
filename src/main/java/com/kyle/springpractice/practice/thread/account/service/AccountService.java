@@ -1,7 +1,8 @@
-package com.kyle.springpractice.practice.multithread.service;
+package com.kyle.springpractice.practice.thread.account.service;
 
-import com.kyle.springpractice.practice.multithread.domain.Account;
-import com.kyle.springpractice.practice.multithread.domain.AccountRepository;
+
+import com.kyle.springpractice.practice.thread.account.domain.Account;
+import com.kyle.springpractice.practice.thread.account.domain.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class AccountService {
         log.info("thread = " + Thread.currentThread().getName() + ", " + "currBalance = " + account.getBalance());
         account.deposit(amount);
         log.info("thread = " + Thread.currentThread().getName() + ", " + "currBalance = " + account.getBalance());
+
         return account.getBalance();
     }
 

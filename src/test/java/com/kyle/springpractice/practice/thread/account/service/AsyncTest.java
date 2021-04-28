@@ -1,6 +1,6 @@
-package com.kyle.springpractice.practice.multithread.service;
+package com.kyle.springpractice.practice.thread.account.service;
 
-import com.kyle.springpractice.practice.multithread.config.HeavyWorkBean;
+import com.kyle.springpractice.practice.thread.account.config.HeavyWorkBean;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

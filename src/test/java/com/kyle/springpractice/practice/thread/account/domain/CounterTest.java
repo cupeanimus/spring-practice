@@ -1,6 +1,5 @@
-package com.kyle.springpractice.practice.multithread.domain;
+package com.kyle.springpractice.practice.thread.account.domain;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

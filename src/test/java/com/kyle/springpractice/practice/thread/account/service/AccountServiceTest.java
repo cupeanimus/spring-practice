@@ -1,5 +1,7 @@
 package com.kyle.springpractice.practice.thread.account.service;
 
+import com.kyle.springpractice.practice.thread.account.domain.Account;
+import com.kyle.springpractice.practice.thread.account.domain.AccountRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

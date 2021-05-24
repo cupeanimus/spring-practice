@@ -20,19 +20,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'io.jsonwebtoken:jjwt:0.9.1'
-    implementation 'com.querydsl:querydsl-jpa'
-    implementation 'com.querydsl:querydsl-apt'
-    implementation 'org.apache.poi:poi-ooxml:3.17'
-    compile group: 'org.springframework.retry', name: 'spring-retry', version: '1.2.5.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.2.7.RELEASE'
+    runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

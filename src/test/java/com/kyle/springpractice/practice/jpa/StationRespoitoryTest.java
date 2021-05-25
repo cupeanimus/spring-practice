@@ -17,6 +17,9 @@ public class StationRespoitoryTest {
     @Autowired
     private StationRepository stationRepository;
 
+    @Autowired
+    private LineRepository lineRepository;
+
 
     @BeforeEach
     void emptyRepository(){
@@ -56,6 +59,36 @@ public class StationRespoitoryTest {
         station1.changeName("몽촌토성역");
         Station station2 = stationRepository.findByName("몽촌토성역");
         assertThat(station2).isNotNull();
+    }
+
+    @Test
+    public void saveWithLine() {
+        Station expected = new Station("잠실역");
+        expected.setLine(lineRepository.save(new Line("2호선")));
+        Station actual = stationRepository.save(expected);
+        stationRepository.flush(); // transaction commit
+    }
+
+    @Test
+    public void findByNameWithLine() {
+        insertData();
+        Station actual = stationRepository.findByName("교대역");
+        assertThat(actual).isNotNull();
+        assertThat(actual.getLine().getName()).isEqualTo("3호선");
+    }
+
+    private void insertData() {
+        Station expected = new Station("교대역");
+        expected.setLine(lineRepository.save(new Line("3호선")));
+        stationRepository.save(expected);
+    }
+
+    @Test
+    public void updateWithLine() {
+        insertData();
+        Station expected = stationRepository.findByName("교대역");
+        expected.setLine(lineRepository.save(new Line("2호선")));
+        stationRepository.flush(); // transaction commit
     }
 
 }

@@ -9,8 +9,8 @@ class BooleanGetTest {
 
     @DisplayName("type에 따라 get메서드가 다르다")
     @Test
-    void getTest(){
-        BooleanGet booleanGet = new BooleanGet(true,true);
+    void getTest() {
+        BooleanGet booleanGet = new BooleanGet(true, true);
 
         assertTrue(booleanGet.getClassBoolean());
         assertTrue(booleanGet.isPrimitiveBoolean());

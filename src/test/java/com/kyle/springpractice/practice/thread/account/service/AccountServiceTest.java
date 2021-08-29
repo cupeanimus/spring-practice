@@ -45,8 +45,8 @@ class AccountServiceTest {
     @Test
     public void SimultaneousDepositPassWithNoRaceCondition() throws InterruptedException {
 
-        CountDownLatch latch = new CountDownLatch(100);
-        for (int i = 0; i < 100; i++) {
+        CountDownLatch latch = new CountDownLatch(200);
+        for (int i = 0; i < 200; i++) {
             service.execute(() -> {
                 accountService.deposit(accountId, 10);
                 latch.countDown();
@@ -54,7 +54,7 @@ class AccountServiceTest {
         }
         latch.await();
         Account richAccount = accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("잘못된 accountId 입니다."));
-        assertThat(richAccount.getBalance()).isEqualTo(10 * 100);
+        assertThat(richAccount.getBalance()).isEqualTo(10 * 200);
 
     }
 
